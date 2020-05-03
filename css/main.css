@@ -1,0 +1,21 @@
+.menu {
+  background-color: #171e26;
+}
+
+.logo {
+  float: right;
+}
+
+.form {
+  display: flex;
+  margin-top: 20px;
+}
+
+.actions {
+  display: flex;
+  margin-top: 5px;
+}
+
+.count {
+  font-size: 20px;
+}
