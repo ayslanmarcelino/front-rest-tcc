@@ -66,6 +66,11 @@ function select(_code=0) {
   const name = document.getElementById('name');
   const age = document.getElementById('age');
   const email = document.getElementById('email');
+  const cpf = document.getElementById('cpf');
+  const rg = document.getElementById('rg');
+  const nickname = document.getElementById('nickname');
+  const cellphone = document.getElementById('cellphone');
+  const gender = document.getElementById('gender');
 
   const http = new XMLHttpRequest();
   http.open('GET', 'http://localhost:3000/people/find/'+_code, true);
@@ -78,6 +83,11 @@ function select(_code=0) {
       name.value = objJSON.name;
       age.value = objJSON.age;
       email.value = objJSON.email;
+      cpf.value = objJSON.cpf;
+      rg.value = objJSON.rg;
+      nickname.value = objJSON.nickname;
+      cellphone.value = objJSON.cellphone;
+      gender.value = objJSON.gender;
     }
   }
   http.send();	
@@ -88,6 +98,11 @@ function clean() {
   document.getElementById('name').value = '';
   document.getElementById('age').value = '';
   document.getElementById('email').value = '';
+  document.getElementById('cpf').value = '';
+  document.getElementById('rg').value = '';
+  document.getElementById('nickname').value = '';
+  document.getElementById('cellphone').value = '';
+  document.getElementById('gender').value = '';
   document.getElementById('name').focus();
 }
 
@@ -96,6 +111,11 @@ function save() {
   const name = document.getElementById('name').value.toString().trim();
   const age = Number(document.getElementById('age').value);
   const email = document.getElementById('email').value.toString().trim();
+  const cpf = Number(document.getElementById('cpf').value);
+  const rg = Number(document.getElementById('rg').value);
+  const nickname = document.getElementById('nickname').value.toString().trim();
+  const cellphone = Number(document.getElementById('cellphone').value);
+  const gender = document.getElementById('gender').value.toString().trim();
 
   let url = '';
   let method = '';
@@ -113,6 +133,11 @@ function save() {
     params.name = name;
     params.age = age;
     params.email = email;
+    params.cpf = cpf;
+    params.rg = rg;
+    params.nickname = nickname;
+    params.cellphone = cellphone;
+    params.gender = gender;
   }
   strJSON = JSON.stringify(params);
 
